@@ -6,10 +6,11 @@ var Utente = /** @class */ (function () {
         this.numeroChiamate = _numeroChiamate;
     }
     Utente.prototype.ricarica = function (valore) {
-        return this.credito + valore;
+        this.credito + valore;
     };
     Utente.prototype.chiamata = function (minuti) {
-        return this.credito = this.credito - ((0.20 * minuti) * this.numeroChiamate);
+        this.numeroChiamate++;
+        this.credito = this.credito - ((0.20 * minuti) * this.numeroChiamate);
     };
     Utente.prototype.numero404 = function () {
         return this.credito;
@@ -18,7 +19,7 @@ var Utente = /** @class */ (function () {
         return this.numeroChiamate;
     };
     Utente.prototype.azzeraChiamate = function () {
-        return this.numeroChiamate = 0;
+        this.numeroChiamate = 0;
     };
     return Utente;
 }());

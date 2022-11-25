@@ -20,11 +20,12 @@ class Utente implements Smartphone {
           
     }
 
-    public ricarica(valore: number): number {
-        return this.credito + valore;
+    public ricarica(valore: number): void {
+        this.credito + valore;
     }
-    public chiamata(minuti: number): number {
-        return this.credito = this.credito - ((0.20 * minuti) * this.numeroChiamate);
+    public chiamata(minuti: number): void {
+        this.numeroChiamate++
+        this.credito = this.credito - ((0.20 * minuti) * this.numeroChiamate);
     }
     public numero404(): number {
         return this.credito;
@@ -32,8 +33,8 @@ class Utente implements Smartphone {
     public getNumeroChiamate(): number {
         return this.numeroChiamate;
     }
-    public azzeraChiamate(): number {
-       return this.numeroChiamate = 0;
+    public azzeraChiamate(): void {
+       this.numeroChiamate = 0;
     }
 
     
